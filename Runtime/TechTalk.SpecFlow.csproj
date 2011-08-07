@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{413EE28C-4F89-4C6F-BA1E-2CDEE4CD43B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TechTalk.SpecFlow</RootNamespace>
+    <AssemblyName>TechTalk.SpecFlow</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\specflow.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\lib\MiniDi\MiniDi.cs">
+      <Link>MiniDi\MiniDi.cs</Link>
+    </Compile>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Assist\EnumerableProjection.cs" />
+    <Compile Include="Assist\TEHelpers.cs" />
+    <Compile Include="Assist\InstanceComparisonExtensionMethods.cs" />
+    <Compile Include="Assist\IValueComparer.cs" />
+    <Compile Include="Assist\PivotTable.cs" />
+    <Compile Include="Assist\ProjectionExtensionMethods.cs" />
+    <Compile Include="Assist\PropertyExtensionMethods.cs" />
+    <Compile Include="Assist\RowExtensionMethods.cs" />
+    <Compile Include="Assist\SetComparisonExtensionMethods.cs" />
+    <Compile Include="Assist\TableExtensionMethods.cs" />
+    <Compile Include="Assist\ValueComparers\BooleanValueComparer.cs" />
+    <Compile Include="Assist\ValueComparers\DoubleValueComparer.cs" />
+    <Compile Include="Assist\ValueComparers\DateTimeValueComparer.cs" />
+    <Compile Include="Assist\ValueComparers\DecimalValueComparer.cs" />
+    <Compile Include="Assist\ValueComparers\DefaultValueComparer.cs" />
+    <Compile Include="Assist\ValueComparers\GuidValueComparer.cs" />
+    <Compile Include="Assist\ValueRetrievers\BoolValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\CharValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\EnumValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\GuidValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\NullableCharValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\NullableDoubleValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\DoubleValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\DateTimeValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\DecimalValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\IntValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\NullableBoolValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\NullableDateTimeValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\NullableDecimalValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\NullableGuidValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\NullableIntValueRetriever.cs" />
+    <Compile Include="Assist\ValueRetrievers\StringValueRetriever.cs" />
+    <Compile Include="Async\AsyncContext.cs" />
+    <Compile Include="Async\AsyncSteps.cs" />
+    <Compile Include="Async\AsyncTestRunner.cs" />
+    <Compile Include="Async\IAsyncTestExecutor.cs" />
+    <Compile Include="Bindings\BindingScope.cs" />
+    <Compile Include="Bindings\StepContext.cs" />
+    <Compile Include="Bindings\StepDefinitionKeyword.cs" />
+    <Compile Include="Bindings\StepMethodBinding.cs" />
+    <Compile Include="PlatformCompatibility\CultureInfoHelper.cs" />
+    <Compile Include="PlatformCompatibility\EnumHelper.cs" />
+    <Compile Include="PlatformCompatibility\ExceptionHelper.cs" />
+    <Compile Include="PlatformCompatibility\MonoHelper.cs" />
+    <Compile Include="PlatformSpecific\ConfigDefaults.cs" />
+    <Compile Include="Configuration\ConfigurationServices.cs" />
+    <Compile Include="Configuration\MissingOrPendingStepsOutcome.cs" />
+    <Compile Include="CultureInfoScope.cs" />
+    <Compile Include="DictionaryHelpers.cs" />
+    <Compile Include="ProgrammingLanguage.cs" />
+    <Compile Include="Steps.cs" />
+    <Compile Include="Bindings\StepTransformationBinding.cs" />
+    <Compile Include="Bindings\StepArgumentTypeConverter.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="ErrorHandling\BindingException.cs" />
+    <Compile Include="Bindings\BindingMatch.cs" />
+    <Compile Include="Bindings\BindingRegistry.cs" />
+    <Compile Include="Bindings\BindingType.cs" />
+    <Compile Include="PlatformSpecific\ConfigurationSectionHandler.cs" />
+    <Compile Include="PlatformSpecific\RuntimeConfiguration.cs" />
+    <Compile Include="ErrorHandling\MissingStepDefinitionException.cs" />
+    <Compile Include="ErrorHandling\PendingStepException.cs" />
+    <Compile Include="ErrorHandling\SpecFlowException.cs" />
+    <Compile Include="Bindings\EventBinding.cs" />
+    <Compile Include="FeatureContext.cs" />
+    <Compile Include="FeatureInfo.cs" />
+    <Compile Include="ITestRunner.cs" />
+    <Compile Include="SpecFlowContext.cs" />
+    <Compile Include="Bindings\StepArgs.cs" />
+    <Compile Include="TestRunnerManager.cs" />
+    <Compile Include="Tracing\CodeFormattingExtensions.cs" />
+    <Compile Include="Tracing\DefaultListener.cs" />
+    <Compile Include="ErrorHandling\ErrorProvider.cs" />
+    <Compile Include="Tracing\IStepDefinitionSkeletonProvider.cs" />
+    <Compile Include="Tracing\LanguageHelper.cs" />
+    <Compile Include="Tracing\NullListener.cs" />
+    <Compile Include="Tracing\StepDefinitionSkeletonProviderBase.cs" />
+    <Compile Include="Tracing\StepDefinitionSkeletonProviderCS.cs" />
+    <Compile Include="Tracing\StepDefinitionSkeletonProviderVB.cs" />
+    <Compile Include="Tracing\StepFormatter.cs" />
+    <Compile Include="UnitTestProvider\MbUnitRuntimeProvider.cs" />
+    <Compile Include="UnitTestProvider\MsTest2010RuntimeProvider.cs" />
+    <Compile Include="UnitTestProvider\UnitTestRuntimeProviderHelper.cs" />
+    <Compile Include="UnitTestProvider\XUnitRuntimeProvider.cs" />
+    <Compile Include="UnitTestProvider\MsTestRuntimeProvider.cs" />
+    <Compile Include="UnitTestProvider\NUnitRuntimeProvider.cs" />
+    <Compile Include="ScenarioContext.cs" />
+    <Compile Include="ScenarioBlock.cs" />
+    <Compile Include="ScenarioInfo.cs" />
+    <Compile Include="Bindings\StepBinding.cs" />
+    <Compile Include="Table.cs" />
+    <Compile Include="TestRunner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ObjectContainer.cs" />
+    <Compile Include="Tracing\TestTracer.cs" />
+    <Compile Include="UnitTestProvider\IUnitTestRuntimeProvider.cs" />
+    <Compile Include="Tracing\ITraceListener.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Languages.xml">
+      <Link>Languages.xml</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
